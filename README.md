@@ -7,5 +7,6 @@ We need to train the detector to highlight the area with the face on the episode
 which will predict one of the 7 emotions.
 
 After that, we will put the project on hosting and you will be able to test it)
+
 (by the way https://ai-project-21.ru)
 
