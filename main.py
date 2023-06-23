@@ -6,6 +6,8 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from io import BytesIO
+from face_detection import get_coordinates
+import torchvision.transforms.functional as F
 
 
 app = FastAPI(title='emotion_classifier')
@@ -44,6 +46,13 @@ transform = transforms.Compose([
 async def predict_emotion(file: UploadFile = File(...)):
     image_bytes = await file.read()
     image = Image.open(BytesIO(image_bytes))
+
+    coordinates = get_coordinates(image)  # детекция лиц
+
+    # трансформация перед подачей в модель
+    x, y, w, h = coordinates[0]
+
+    image = F.crop(image, y, x, h, w)
     image = transform(image)
 
     with torch.no_grad():
@@ -52,8 +61,8 @@ async def predict_emotion(file: UploadFile = File(...)):
         _, predicted_idx = torch.max(prediction, 1)
         emotion = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise'][predicted_idx.item()]
 
-    return {"emotion": emotion}
+    return {"emotion": emotion, "coordinates": coordinates}
 
 
-# if __name__ == '__main__':
-#     uvicorn.run(app, host='127.0.0.1', port=8000)
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)
