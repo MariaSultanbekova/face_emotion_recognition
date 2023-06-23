@@ -12,4 +12,5 @@ After that, we will put the project on hosting and you will be able to test it)
 
 ![image](https://github.com/MariaSultanbekova/face_emotion_recognition/assets/109607272/2650fd71-bae0-4e3e-9227-98e4478919f6)
 
+![image](https://github.com/MariaSultanbekova/face_emotion_recognition/assets/109607272/c5e6df6f-1997-457f-8c26-b2cd12225063)
 
