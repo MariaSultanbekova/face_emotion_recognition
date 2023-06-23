@@ -10,3 +10,6 @@ After that, we will put the project on hosting and you will be able to test it)
 
 (by the way https://ai-project-21.ru)
 
+![image](https://github.com/MariaSultanbekova/face_emotion_recognition/assets/109607272/2650fd71-bae0-4e3e-9227-98e4478919f6)
+
+
