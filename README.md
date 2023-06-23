@@ -1,14 +1,15 @@
 hi guys) at work in a startup that I am engaged in, they gave me a new idea for practicing skills
 -------------------------------------------------------------------------------------------------
 
-In this project, I am writing a website on react, which will have a window with a video and visualization of your recognized emotion.
+In this project, I created a website on react, with a visualization of the video stream and the recognized emotion.
+I trained the classifier (resnet34) to predict one of 7 emotions.
 
-We need to train the detector to highlight the area with the face on the episode, then train the classifier (we will have resnet34), 
-which will predict one of the 7 emotions.
+After that, I rented a server, launched a project on it, configured nginx and connected ssl so that the site had a domain name and a secure connection.
 
-After that, we will put the project on hosting and you will be able to test it)
+Here https://ai-project-21.ru
 
-(by the way https://ai-project-21.ru)
+
+As soon as I find the time, I will train the detector to get only the area with the face on the episode.
 
 ![image](https://github.com/MariaSultanbekova/face_emotion_recognition/assets/109607272/2650fd71-bae0-4e3e-9227-98e4478919f6)
 
